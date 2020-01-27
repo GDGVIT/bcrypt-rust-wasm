@@ -1,48 +1,52 @@
+# bcrypt-rust-wasm
+Optimized bcrypt implementation in WASM, written in rust.
+
+[![npm version](https://badge.fury.io/js/bcrypt-rust-wasm.svg)](https://badge.fury.io/js/bcrypt-rust-wasm)
+
 ## How to install
 
 ```sh
-npm install
+npm i -s bcrypt-rust-wasm
 ```
 
-## How to run in debug mode
-
-```sh
-# Builds the project and opens it in a new browser tab. Auto-reloads when the project changes.
-npm start
-```
 
 ## How to build in release mode
 
 ```sh
-# Builds the project and places it into the `dist` folder.
+# Builds the project and places it into the `pkg` folder.
 npm run build
 ```
 
-## How to run unit tests
+## Dependencies for building
+ - [Rust](https://rustup.rs/)
+ - [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
 
-```sh
-# Runs tests in Firefox
-npm test -- --firefox
+# Usage
+This library is currently compatible with NodeJS and supports the synchronous bindings only.
 
-# Runs tests in Chrome
-npm test -- --chrome
-
-# Runs tests in Safari
-npm test -- --safari
+## Importing
+```js
+const { Bcrypt } = require('bcrypt-rust-wasm');
+...
 ```
 
-## What does each file do?
+## Obtaining an instance
+```js
+// Get a bcrypt instance with a default number of seed rounds
+const bcryptDefault = Bcrypt.default();
 
-* `Cargo.toml` contains the standard Rust metadata. You put your Rust dependencies in here. You must change this file with your details (name, description, version, authors, categories)
+// Get a bcrypt instance with a specified number of seed rounds
+const bcrypt = Bcrypt.new(10);
+```
 
-* `package.json` contains the standard npm metadata. You put your JavaScript dependencies in here. You must change this file with your details (author, name, version)
+## Hashing
+```js
+const hash = bcrypt.hashSync('password'); 
+// hash: "$2b$04$fsiGFAMtgNJ8YIszhoxusObEgoLF.faqMIKXiRDp5GZbzFWzebgcu"
+```
 
-* `webpack.config.js` contains the Webpack configuration. You shouldn't need to change this, unless you have very special needs.
-
-* The `js` folder contains your JavaScript code (`index.js` is used to hook everything into Webpack, you don't need to change it).
-
-* The `src` folder contains your Rust code.
-
-* The `static` folder contains any files that you want copied as-is into the final build. It contains an `index.html` file which loads the `index.js` file.
-
-* The `tests` folder contains your Rust unit tests.
+## Verifying a hash
+```js
+bcrypt.verify("password", hash) // true
+bcrypt.verify("password123", hash) // false
+```
