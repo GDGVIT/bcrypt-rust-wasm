@@ -33,7 +33,7 @@ impl Bcrypt {
         hash(pass, self.cost).unwrap()
     }
 
-    pub fn verifySync(&self, pass: &str) -> bool {
-        verify(pass, pass).unwrap()
+    pub fn verifySync(&self, pass: &str, hash: &str) -> bool {
+        verify(pass, hash).unwrap()
     }
 }

@@ -12,7 +12,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "bcrypt-rust-wasm"
-version = "0.1.4"
+version = "0.1.6"
 dependencies = [
  "bcrypt-wasm 0.6.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "console_error_panic_hook 0.1.6 (registry+https://github.com/rust-lang/crates.io-index)",

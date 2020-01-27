@@ -2,7 +2,7 @@
 [package]
 name = "bcrypt-rust-wasm"
 description = "Bcrypt implementation for WASM, written in Rust"
-version = "0.1.4"
+version = "0.1.6"
 authors = ["Amogh Lele <amolele@gmail.com>"]
 categories = ["wasm", "crypto"]
 readme = "README.md"
