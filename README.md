@@ -1,9 +1,25 @@
-# bcrypt-rust-wasm
-Optimized bcrypt implementation in WASM, written in rust.
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
+	<h2 align="center">bcrypt-wasm-rust</h2>
+	<h4 align="center">Optimized bcrypt implementation in WASM, written in rust.<h4>
+</p>
 
 [![npm version](https://badge.fury.io/js/bcrypt-rust-wasm.svg)](https://badge.fury.io/js/bcrypt-rust-wasm)
 
-## How to install
+----
+
+## Functionalities
+- Hash passwords
+- Custom rounds for salt
+- Verify hashed passwords
+- Faster than the pure JS implementation
+
+# Instructions to run
+
+* Pre-requisites:
+	-  NPM 
+
+## Installation with NPM
 
 ```sh
 npm i -s bcrypt-rust-wasm
@@ -50,3 +66,14 @@ npm run build
 ## Dependencies for building
  - [Rust](https://rustup.rs/)
  - [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
+
+# Contributors
+ - @ATechnoHazard - for the implementation
+ - @L04DB4L4NC3R - for the idea
+
+<br>
+<br>
+
+ <p align="center">
+	Made with :heart: by DSC VIT
+</p>
