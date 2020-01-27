@@ -9,18 +9,6 @@ Optimized bcrypt implementation in WASM, written in rust.
 npm i -s bcrypt-rust-wasm
 ```
 
-
-## How to build in release mode
-
-```sh
-# Builds the project and places it into the `pkg` folder.
-npm run build
-```
-
-## Dependencies for building
- - [Rust](https://rustup.rs/)
- - [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
-
 # Usage
 This library is currently compatible with NodeJS and supports the synchronous bindings only.
 
@@ -50,3 +38,15 @@ const hash = bcrypt.hashSync('password');
 bcrypt.verify("password", hash) // true
 bcrypt.verify("password123", hash) // false
 ```
+
+# Building from source
+## How to build in release mode
+
+```sh
+# Builds the project and places it into the `pkg` folder.
+npm run build
+```
+
+## Dependencies for building
+ - [Rust](https://rustup.rs/)
+ - [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
