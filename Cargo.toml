@@ -2,9 +2,11 @@
 [package]
 name = "bcrypt-rust-wasm"
 description = "Bcrypt implementation for WASM, written in Rust"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Amogh Lele <amolele@gmail.com>"]
-categories = ["wasm", "crypto"]
+categories = ["wasm", "crypto", "bcrypt", "hash"]
+repository = "https://github.com/GDGVIT/bcrypt-rust-wasm"
+license = "MIT"
 readme = "README.md"
 edition = "2018"
 
@@ -14,12 +16,11 @@ crate-type = ["cdylib"]
 [profile.release]
 # This makes the compiled code faster and smaller, but it makes compiling slower,
 # so it's only enabled in release mode.
-# lto = true
-debug = true
+lto = true
 
 [features]
 # If you uncomment this line, it will enable `wee_alloc`:
-#default = ["wee_alloc"]
+default = ["wee_alloc"]
 
 [dependencies]
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
