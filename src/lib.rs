@@ -29,10 +29,12 @@ impl Bcrypt {
         Bcrypt { cost: DEFAULT_COST }
     }
 
+    #[allow(non_snake_case)]
     pub fn hashSync(&self, pass: &str) -> String {
         hash(pass, self.cost).unwrap()
     }
 
+    #[allow(non_snake_case)]
     pub fn verifySync(&self, pass: &str, hash: &str) -> bool {
         verify(pass, hash).unwrap()
     }
