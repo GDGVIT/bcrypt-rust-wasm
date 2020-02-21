@@ -51,8 +51,8 @@ const hash = bcrypt.hashSync('password');
 
 ## Verifying a hash
 ```js
-bcrypt.verify("password", hash) // true
-bcrypt.verify("password123", hash) // false
+bcrypt.verifySync("password", hash) // true
+bcrypt.verifySync("password123", hash) // false
 ```
 
 # Building from source
