@@ -2,7 +2,7 @@
 [package]
 name = "bcrypt-rust-wasm"
 description = "Bcrypt implementation for WASM, written in Rust"
-version = "0.1.7"
+version = "0.1.9"
 authors = ["Amogh Lele <amolele@gmail.com>"]
 categories = ["wasm", "crypto", "bcrypt", "hash"]
 repository = "https://github.com/GDGVIT/bcrypt-rust-wasm"
@@ -26,7 +26,7 @@ default = ["wee_alloc"]
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
 # to interact with JavaScript.
 wasm-bindgen = "0.2.58"
-bcrypt-wasm = "0.6.3"
+bcrypt-wasm = "0.7"
 
 # `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size
 # compared to the default allocator's ~10K. However, it is slower than the default
